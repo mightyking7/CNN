@@ -63,6 +63,7 @@ def train(epoch):
     for idx, (img, target) in enumerate(trainLoader):
         cnn.optim.zero_grad()
         y_hat = cnn(img)
+
         loss = F.nll_loss(y_hat, target)  # ?
         loss.backward()
         cnn.optim.step()
